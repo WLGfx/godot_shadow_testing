@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfrb4obm2mss4"]
+
+[ext_resource type="PackedScene" uid="uid://8so08tx8pljj" path="res://scene/box.tscn" id="1_b8o74"]
+[ext_resource type="PackedScene" uid="uid://0nghdn3aom1x" path="res://scene/ui.tscn" id="2_hwk5w"]
+
+[node name="SpinIt" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_b8o74")]
+
+[node name="Node2D" parent="." instance=ExtResource("2_hwk5w")]
