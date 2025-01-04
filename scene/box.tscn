@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://8so08tx8pljj"]
+[gd_scene load_steps=8 format=3 uid="uid://8so08tx8pljj"]
+
+[ext_resource type="Script" path="res://scene/box.gd" id="1_xpmaq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rdbp3"]
 
@@ -144,6 +146,7 @@ _data = {
 size = Vector2(10, 10)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_xpmaq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
@@ -172,3 +175,32 @@ mesh = SubResource("PlaneMesh_cjea4")
 transform = Transform3D(0.569179, 0, 0.822214, -0.483099, 0.809181, 0.334426, -0.66532, -0.587559, 0.460569, 1.62202, 2.05122, 1.91947)
 shadow_enabled = true
 spot_range = 4.64593
+
+[node name="Control" type="Control" parent="SpotLight3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpotLight3D/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="SpotLight3D/Control/VBoxContainer"]
+layout_mode = 2
+text = "Light colour"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="SpotLight3D/Control/VBoxContainer"]
+layout_mode = 2
+text = "Light Color"
+flat = true
+color = Color(1, 1, 1, 1)
+
+[connection signal="color_changed" from="SpotLight3D/Control/VBoxContainer/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
