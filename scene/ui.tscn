@@ -1,26 +1,83 @@
 [gd_scene format=3 uid="uid://0nghdn3aom1x"]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Control" type="Control" parent="."]
+[node name="Node2D" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 833.0
-offset_bottom = 414.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="Top Left" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 145.0
-offset_bottom = 66.0
+offset_bottom = 101.0
 
-[node name="Button" type="Button" parent="Control/VBoxContainer"]
+[node name="Button" type="Button" parent="Top Left"]
 layout_mode = 2
 text = "UP"
 
-[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+[node name="Button2" type="Button" parent="Top Left"]
 layout_mode = 2
 text = "DOWN"
 
-[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+[node name="Button3" type="Button" parent="Top Left"]
 layout_mode = 2
 text = "EXIT"
+
+[node name="Arrows" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -101.0
+offset_right = 62.0
+grow_vertical = 0
+alignment = 2
+
+[node name="1st" type="VBoxContainer" parent="Arrows"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Arrows/1st"]
+layout_mode = 2
+text = "."
+
+[node name="Button2" type="Button" parent="Arrows/1st"]
+layout_mode = 2
+text = "<"
+
+[node name="Button3" type="Button" parent="Arrows/1st"]
+layout_mode = 2
+text = "."
+
+[node name="2nd" type="VBoxContainer" parent="Arrows"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Arrows/2nd"]
+layout_mode = 2
+text = "^"
+
+[node name="Button2" type="Button" parent="Arrows/2nd"]
+layout_mode = 2
+text = "."
+
+[node name="Button3" type="Button" parent="Arrows/2nd"]
+layout_mode = 2
+text = "V"
+
+[node name="3rd" type="VBoxContainer" parent="Arrows"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Arrows/3rd"]
+layout_mode = 2
+text = "."
+
+[node name="Button2" type="Button" parent="Arrows/3rd"]
+layout_mode = 2
+text = ">"
+
+[node name="Button3" type="Button" parent="Arrows/3rd"]
+layout_mode = 2
+text = "."
